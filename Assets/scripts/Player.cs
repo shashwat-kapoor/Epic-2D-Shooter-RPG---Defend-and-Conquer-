@@ -57,4 +57,12 @@ public class Player : MonoBehaviour
     {
         Instantiate(BulletPrefab, FiringPoint.position, FiringPoint.rotation);
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
