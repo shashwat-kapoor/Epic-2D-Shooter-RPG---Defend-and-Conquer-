@@ -13,6 +13,7 @@ public class SmoothCameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (target == null) return;
         Vector3 targetPosition = target.position + offset;
         targetPosition.z = transform.position.z;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref vel, damping);

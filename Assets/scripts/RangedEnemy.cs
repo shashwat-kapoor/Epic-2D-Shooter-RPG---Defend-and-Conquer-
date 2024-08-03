@@ -7,7 +7,7 @@ public class RangedEnemy : MonoBehaviour
     public Transform target;
     public float speed = 3f;
     public float rotatespeed = 0.0025f;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public GameObject BulletPrefab;
 
     public float distanceToShoot = 5f;
@@ -21,7 +21,6 @@ public class RangedEnemy : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        timeToFire = fireRate;
     }
 
     private void Update()
@@ -35,7 +34,7 @@ public class RangedEnemy : MonoBehaviour
             RotateTowardsTarget();
         }
 
-        if(Vector2.Distance(target.position, transform.position) <= distanceToStop)
+        if (target != null && Vector2.Distance(target.position, transform.position) <= distanceToShoot)
         {
             Shoot();
         }
@@ -56,9 +55,9 @@ public class RangedEnemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (target != null)
+         if (target != null)
         {
-            if (Vector2.Distance(target.position, transform.position) >= distanceToShoot)
+            if (Vector2.Distance(target.position, transform.position) >= distanceToStop)
             {
                 rb.velocity = transform.up * speed;
             }
