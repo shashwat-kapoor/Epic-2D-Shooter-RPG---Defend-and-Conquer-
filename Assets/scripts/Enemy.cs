@@ -50,10 +50,12 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            LevelManager.manager.GameOver();
             Destroy(other.gameObject);
             target = null;
         }
         else if(other.gameObject.CompareTag("Bullet")){
+            LevelManager.manager.IncreaseScore(1);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

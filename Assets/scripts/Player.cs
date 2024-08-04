@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyBullet"))
         {
+            LevelManager.manager.GameOver();
             Destroy(gameObject); 
         }
     }
