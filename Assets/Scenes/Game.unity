@@ -1567,7 +1567,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1755985487634333281, guid: ff777c5e119b1ca4884af7b00117b5c3, type: 3}
   - {fileID: 1860456469608449783, guid: 0f025414f91ea5649a4227e1ca4ed1a5, type: 3}
-  - {fileID: 1860456469608449783, guid: aee316fc1a2cbc342b26594e2ced8c5e, type: 3}
+  - {fileID: 1407108567869279519, guid: 3a74d859999f63a44b0d5b0586a24597, type: 3}
   canSpawn: 1
 --- !u!4 &1462363157
 Transform:
