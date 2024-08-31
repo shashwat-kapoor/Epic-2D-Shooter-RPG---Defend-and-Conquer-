@@ -53,6 +53,12 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void quitGame()
+    {
+
+        Application.Quit();
+    }
     public void IncreaseScore(int amount)
     {
         score += amount;
